@@ -1,3 +1,4 @@
+import quotes from './quotes.js'
 const btn = document.querySelector('#add-task')
 const taskInput = document.querySelector('#text-input')
 const taskList = document.querySelector('#tasks')
@@ -6,19 +7,28 @@ const quote = document.querySelector('#quote')
 const author = document.querySelector('#author')
 
 
-
 // const corsProxy = 'https://cors-proxy-share-eight.vercel.app'
 const corsProxy = 'https://cors-anywhere.herokuapp.com'
-const getQuote = async () => {
-    // const res = await fetch(corsProxy, { headers: { 'my-url': 'https://zenquotes.io/api/random' }})
-    const res = await fetch(corsProxy +'http://sunnyquotes.net/q.php?random' )
-     const quoteRes = await res.json()
-     console.log(res, quoteRes)
-    // quote.innerHTML = `"${quoteRes[0].q}"`
-    // author.innerHTML = '- ' + quoteRes[0].a
-    }
+// const getQuote = async () => {
+//     const res = await fetch(corsProxy, { headers: { 'my-url': 'https://zenquotes.io/api/random' }})
+//     // const res = await fetch(corsProxy, { headers: { 'my-url': 'http://sunnyquotes.net/q.php?random' }})
+//      const quoteRes = await res.json()
+//      console.log(res, quoteRes)
+//     quote.innerHTML = `"${quoteRes[0].q}"`
+//     author.innerHTML = '- ' + quoteRes[0].a
+//     }
 
-const quotes = getQuote()
+
+
+const getQuote = () => {
+const rand = Math.floor(Math.random() * quotes.length)
+    const randomQuote = quotes[rand]
+    quote.innerHTML = `"${randomQuote.q}"`
+    author.innerHTML = '- ' + randomQuote.a
+
+}
+getQuote()
+
 
 
 
@@ -41,8 +51,8 @@ const populateList = () => {
     addCompletedBtn(completedBtns)
     const deleteFinishedTasks = document.querySelectorAll('#delete-finished-task')
     addDeleteBtn(deleteFinishedTasks, getFinishedTasks, 'finishedTasks')
-
 }
+
 const addDeleteBtn = (btns, getStoredArray, storedKey) => {
     for (let btn of btns){btn.addEventListener('click', () => {
         const arr = getStoredArray()
