@@ -7,12 +7,15 @@ const author = document.querySelector('#author')
 
 
 
-const corsProxy = 'https://cors-proxy-share-4m4pr0wm5-bccbass.vercel.app'
+// const corsProxy = 'https://cors-proxy-share-eight.vercel.app'
+const corsProxy = 'https://cors-anywhere.herokuapp.com/'
 const getQuote = async () => {
-    const res = await fetch(corsProxy, { headers: { 'my-url': 'https://zenquotes.io/api/random' }})
+    // const res = await fetch(corsProxy, { headers: { 'my-url': 'https://zenquotes.io/api/random' }})
+    const res = await fetch('http://sunnyquotes.net/q.php?random' )
      const quoteRes = await res.json()
-    quote.innerHTML = `"${quoteRes[0].q}"`
-    author.innerHTML = '- ' + quoteRes[0].a
+     console.log(res, quoteRes)
+    // quote.innerHTML = `"${quoteRes[0].q}"`
+    // author.innerHTML = '- ' + quoteRes[0].a
     }
 
 const quotes = getQuote()
