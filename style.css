@@ -73,11 +73,11 @@ color: rgb(135, 134, 134);
 }
 
 
-#finished-task:hover {
+#add-task:hover, #finished-task:hover {
     color: green;
 }
 
-#delete-task, #delete-finished-task, #finished-task{
+#delete-task, #delete-finished-task, #finished-task, #add-task{
 transition: 150ms ease-in-out}
 #delete-task:hover, #delete-finished-task:hover{
 color: red
