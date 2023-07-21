@@ -1,0 +1,109 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url('https://images.unsplash.com/photo-1553526777-5ffa3b3248d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA'); */
+    background-image: url('https://source.unsplash.com/1600x900/?pattern');
+    background-size: cover;
+}
+
+main {
+    width: 50vw;
+    background-color: white;
+    padding: 2rem;
+    border: 1px solid rgb(89, 89, 89);
+    border-radius: .3rem;
+    margin: 6rem;
+    color: rgb(69, 69, 69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+ul  {
+    list-style-type: none;
+    width: 80%;
+    margin: 0;
+}
+li {
+    border: 1px solid rgb(147, 147, 147);
+    border-radius: .3rem;
+    padding: .3rem;
+    background-color: rgb(238, 235, 235);
+    margin: .3rem;
+    display: flex;
+    justify-content: space-between;
+    opacity: 1;
+    transition: opacity 500ms ease-in-out;
+}
+
+.fall {
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+#tasks {
+    margin-top: 1.4rem;
+}
+
+#finished-tasks {
+    margin-top: 0;
+}
+#finished-tasks li {
+    background-color: rgb(179, 177, 177);
+}
+h3 {
+    margin: 3rem 0 .2rem;
+}
+
+.buttons *{
+    margin: 0 .3rem
+}
+
+.check {
+    color: green;
+}
+
+.done {
+color: rgb(135, 134, 134);
+}
+
+
+#finished-task:hover {
+    color: green;
+}
+
+#delete-task, #delete-finished-task, #finished-task{
+transition: 150ms ease-in-out}
+#delete-task:hover, #delete-finished-task:hover{
+color: red
+}
+
+#quote-wrapper {
+    color: rgb(56, 56, 56);
+    border-radius: .3rem;
+    background-color: rgba(255, 255, 255, 0.747);
+    margin: 0 4rem 4rem;
+    padding: 0;
+}
+#quote {
+    font-weight: 100;
+    padding: 1rem 2rem 0;
+    margin: 0;
+    font-size: 1.2rem;
+}
+#author {
+    font-style: italic;
+    margin: .5rem 10rem 1rem;
+    text-align: right;
+}
+
+#text-input::placeholder {
+    color: rgb(145, 142, 142);
+    font-size: .6rem;
+    font-style: italic;
+}
