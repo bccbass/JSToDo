@@ -8,10 +8,10 @@ const author = document.querySelector('#author')
 
 
 // const corsProxy = 'https://cors-proxy-share-eight.vercel.app'
-const corsProxy = 'https://cors-anywhere.herokuapp.com/'
+const corsProxy = 'https://cors-anywhere.herokuapp.com'
 const getQuote = async () => {
     // const res = await fetch(corsProxy, { headers: { 'my-url': 'https://zenquotes.io/api/random' }})
-    const res = await fetch('http://sunnyquotes.net/q.php?random' )
+    const res = await fetch(corsProxy +'http://sunnyquotes.net/q.php?random' )
      const quoteRes = await res.json()
      console.log(res, quoteRes)
     // quote.innerHTML = `"${quoteRes[0].q}"`
