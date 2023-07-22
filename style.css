@@ -8,6 +8,7 @@ body {
     /* background-image: url('https://images.unsplash.com/photo-1553526777-5ffa3b3248d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA'); */
     background-image: url('https://source.unsplash.com/1600x900/?pattern');
     background-size: cover;
+    
 }
 
 main {
@@ -106,4 +107,18 @@ color: red
     color: rgb(145, 142, 142);
     font-size: .6rem;
     font-style: italic;
+}
+
+@media (max-width: 900px) {
+    body {
+        background-size: auto;
+    }
+    main {
+        width: 80vw;
+        margin: 2rem;
+    }
+    #tasks, #finished-tasks {
+        width: 100%
+    }
+
 }

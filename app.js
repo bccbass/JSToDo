@@ -3,8 +3,10 @@ const btn = document.querySelector('#add-task')
 const taskInput = document.querySelector('#text-input')
 const taskList = document.querySelector('#tasks')
 const finishedTasks = document.querySelector('#finished-tasks')
+const completedHeading = document.querySelector('#completed-heading')
 const quote = document.querySelector('#quote')
 const author = document.querySelector('#author')
+
 
 // const corsProxy = 'https://cors-proxy-share-eight.vercel.app'
 const corsProxy = 'https://cors-anywhere.herokuapp.com'
@@ -24,17 +26,21 @@ const corsProxy = 'https://cors-anywhere.herokuapp.com'
 
 
 
-    const getStoredTasks = () => JSON.parse(localStorage.tasks ? localStorage.tasks : '[]')
+const getStoredTasks = () => JSON.parse(localStorage.tasks ? localStorage.tasks : '[]')
 const getFinishedTasks = () => JSON.parse(localStorage.finishedTasks ? localStorage.finishedTasks : '[]')
 
-const populateList = () => {
+const populateList = () => {    
     const storedTasks = getStoredTasks()
+    console.log(storedTasks)
     const htmlTasks = storedTasks.map((task, i) => `<li id='${i}'> ${task} <div class="buttons"> <button id="finished-task">&#x2713;</button><button id="delete-task">-</button></div> </li>`).join('')
     taskList.innerHTML = htmlTasks
     
     const finishedTasksArr = getFinishedTasks()
+    const completedHeadingMsg = finishedTasksArr.length ? 'Completed Tasks:' : ''
+    completedHeading.innerHTML = completedHeadingMsg
     const htmlFinishedTasks = finishedTasksArr.map((task, i) => `<li id='${i}'><div class='done'><span class="check"> &#x2713; </span>${task} </div><div class="buttons"><button id="delete-finished-task">-</button></div> </li>`).join('')
     finishedTasks.innerHTML = htmlFinishedTasks
+
     
     const deleteBtns = document.querySelectorAll('#delete-task')
     addDeleteBtn(deleteBtns, getStoredTasks, 'tasks')
