@@ -1,7 +1,6 @@
 # JavaScript ToDo List
 
+![screenshot of to do list](./screenshot.jpg)
 
+A very simple JavaScript To Do List using local storage for some amount of statefulness. 
 
-
-Set up a CORS proxy to use with API:
-https://stackoverflow.com/questions/43262121/trying-to-use-fetch-and-pass-in-mode-no-cors
