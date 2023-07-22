@@ -88,8 +88,10 @@ color: red
     color: rgb(56, 56, 56);
     border-radius: .3rem;
     background-color: rgba(255, 255, 255, 0.747);
-    margin: 0 4rem 4rem;
+    margin: 0 4rem 2rem;
     padding: 0;
+    /* position: fixed; */
+    bottom: 1rem;
 }
 #quote {
     font-weight: 100;
@@ -101,6 +103,7 @@ color: red
     font-style: italic;
     margin: .5rem 10rem 1rem;
     text-align: right;
+
 }
 
 #text-input::placeholder {
@@ -109,10 +112,13 @@ color: red
     font-style: italic;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     body {
         background-size: auto;
     }
+}
+@media (max-width: 900px) {
+ 
     main {
         width: 80vw;
         margin: 2rem;
@@ -121,4 +127,14 @@ color: red
         width: 100%
     }
 
+    #author {
+        margin-right: 1rem;
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    #quote-wrapper *{
+        font-size: .9rem;
+    }
 }
