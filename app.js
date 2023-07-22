@@ -14,7 +14,6 @@ const corsProxy = 'https://cors-anywhere.herokuapp.com'
 //     const res = await fetch(corsProxy, { headers: { 'my-url': 'https://zenquotes.io/api/random' }})
 //     // const res = await fetch(corsProxy, { headers: { 'my-url': 'http://sunnyquotes.net/q.php?random' }})
 //      const quoteRes = await res.json()
-//      console.log(res, quoteRes)
 //     quote.innerHTML = `"${quoteRes[0].q}"`
 //     author.innerHTML = '- ' + quoteRes[0].a
 //     }
@@ -31,7 +30,6 @@ const getFinishedTasks = () => JSON.parse(localStorage.finishedTasks ? localStor
 
 const populateList = () => {    
     const storedTasks = getStoredTasks()
-    console.log(storedTasks)
     const htmlTasks = storedTasks.map((task, i) => `<li id='${i}'> ${task} <div class="buttons"> <button id="finished-task">&#x2713;</button><button id="delete-task">-</button></div> </li>`).join('')
     taskList.innerHTML = htmlTasks
     

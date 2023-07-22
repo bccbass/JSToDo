@@ -1,19 +1,18 @@
 body {
     font-family: 'Raleway', sans-serif;
-    /* background-color: gray; */
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-image: url('https://images.unsplash.com/photo-1553526777-5ffa3b3248d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA'); */
     background-image: url('https://source.unsplash.com/1600x900/?pattern');
-    background-size: cover;
+    background-size: auto;
     
 }
 
 main {
     width: 50vw;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 2rem;
     border: 1px solid rgb(89, 89, 89);
     border-radius: .3rem;
@@ -23,12 +22,15 @@ main {
     flex-direction: column;
     align-items: center;
     height: auto;
+    
 }
 
 ul  {
     list-style-type: none;
-    width: 80%;
+    width: 90%;
     margin: 0;
+    padding: 0;
+    max-width: 600px;
 }
 li {
     border: 1px solid rgb(147, 147, 147);
@@ -85,12 +87,13 @@ color: red
 }
 
 #quote-wrapper {
-    color: rgb(56, 56, 56);
+    color: rgb(42, 42, 42);
     border-radius: .3rem;
-    background-color: rgba(255, 255, 255, 0.747);
+    background-color: rgba(255, 255, 255, 0.9);
     margin: 0 4rem 2rem;
     padding: 0;
-    /* position: fixed; */
+    width: auto;
+    max-width: 850px;
     bottom: 1rem;
 }
 #quote {
@@ -101,7 +104,8 @@ color: red
 }
 #author {
     font-style: italic;
-    margin: .5rem 10rem 1rem;
+    margin: .5rem;
+    margin-right: 15%;
     text-align: right;
 
 }
@@ -112,28 +116,28 @@ color: red
     font-style: italic;
 }
 
-@media (max-width: 1100px) {
-    body {
-        background-size: auto;
-    }
-}
+
 @media (max-width: 900px) {
- 
     main {
-        width: 80vw;
+        width: 80%;
         margin: 2rem;
     }
     #tasks, #finished-tasks {
         width: 100%
     }
-
-    #author {
-        margin-right: 1rem;
-        width: 50%;
+    #quote-wrapper {
+        /* position: relative; */
+        top: 2rem;
+        margin-bottom: 4rem;
     }
 }
 
 @media (max-width: 600px) {
+    main {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.85);
+
+    }
     #quote-wrapper *{
         font-size: .9rem;
     }
