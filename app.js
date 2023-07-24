@@ -10,10 +10,16 @@ const author = document.querySelector('#author')
 
 const corsProxy = 'https://cors-proxy-awesome-105b58c47564.herokuapp.com/'
 const getQuote = async () => {
-    const res = await fetch(corsProxy + 'https://zenquotes.io/api/random')
-     const quoteRes = await res.json()
+    try
+    {const res = await fetch(corsProxy + 'https://zenquotes.io/api/random')
+    const quoteRes = await res.json()
     quote.innerHTML = `"${quoteRes[0].q}"`
-    author.innerHTML = '- ' + quoteRes[0].a
+    author.innerHTML = '- ' + quoteRes[0].a}
+    catch (e){
+    quote.innerHTML = `"Tradition is a set of solutions for which we have forgotten the problems."`
+    author.innerHTML = '- Donald Kingsbury'
+    console.error(e.message)
+    }
     }
 
 const getStoredTasks = () => JSON.parse(localStorage.tasks ? localStorage.tasks : '[]')
